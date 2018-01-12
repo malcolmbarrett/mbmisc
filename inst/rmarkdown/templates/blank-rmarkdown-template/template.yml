@@ -1,0 +1,4 @@
+name: Blank RMarkdown Template
+description: >
+   A blank R Markdown Template with no examples
+create_dir: FALSE
