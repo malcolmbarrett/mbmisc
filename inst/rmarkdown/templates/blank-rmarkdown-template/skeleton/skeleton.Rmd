@@ -1,6 +1,6 @@
 ---
 title: "Untitled"
-author: "Your Name"
+author: "Malcolm Barrett"
 date: "`r Sys.Date()`"
 output:
   pdf_document: default
