@@ -58,7 +58,7 @@ a \code{data.frame} or vector.
 }
 \description{
 Quickly concatenate an estimate with its confidence intervals. Works with
-vectors or output from \code{\link[broom:tidy]{broom::tidy()}}.
+vectors hexor output from \code{\link[broom:tidy]{broom::tidy()}}.
 }
 \examples{
 

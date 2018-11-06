@@ -60,7 +60,7 @@ make_formula <- function(y, x) {
 #' Paste an estimate and CI together
 #'
 #' Quickly concatenate an estimate with its confidence intervals. Works with
-#' vectors or output from [broom::tidy()].
+#' vectors hexor output from [broom::tidy()].
 #'
 #' @param est either `a data.frame` or a vector of estimates
 #' @param lower the lower CI. if `NULL`, will search for "conf.low"

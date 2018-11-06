@@ -9,7 +9,15 @@
 #' @export
 #' @rdname palettes
 palette_malco <- function(index = NULL) {
-  pal <- c("#E69F00", "#56B4E9", "#009E73", "#D55E00", "#E5E5E5", "#23373B")
+  pal <- c(
+    "#56B4EA",
+    "#CC78A8",
+    "#E7A000",
+    "#0172B1",
+    "#4E834B",
+    "#474747",
+    "#EDEEF0"
+  )
   if (!is.null(index)) pal[index] else pal
 }
 
@@ -34,13 +42,11 @@ palette_highlight <- function(index = NULL) {
 #' @export
 #' @importFrom ggplot2 %+replace%
 #' @rdname theme_malco
-theme_malco <- function(font_size = 14, font_family = "Roboto Condensed",
-                        line_size = .5, color = "grey90") {
+theme_malco <- function(font_size = 14, font_family = "IBM Plex Sans",
+                        line_size = .5, color = "grey90", text_color = "grey70") {
   half_line <- font_size / 2
-  small_rel <- 0.857
-  small_size <- small_rel * font_size
 
-  ggplot2::theme_grey(base_size = font_size, base_family = font_family) %+replace%
+  ggplot2::theme_minimal(base_size = font_size, base_family = font_family) %+replace%
     ggplot2::theme(
       rect = ggplot2::element_rect(
         fill = "transparent",
@@ -52,68 +58,27 @@ theme_malco <- function(font_size = 14, font_family = "Roboto Condensed",
       text = ggplot2::element_text(
         family = font_family,
         face = "plain",
-        colour = "black",
+        colour = text_color,
         size = font_size,
-        hjust = 0.5,
-        vjust = 0.5,
         angle = 0,
-        lineheight = .9,
-        margin = ggplot2::margin(),
-        debug = FALSE
-      ),
-      axis.text = ggplot2::element_text(colour = "black", size = small_size),
-      axis.text.x = ggplot2::element_text(margin = ggplot2::margin(t = small_size / 4), vjust = 1),
-      axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = small_size / 4), hjust = 1),
-      axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = small_size / 2, b = small_size / 4)),
-      axis.title.y = ggplot2::element_text(angle = 90,
-                                                margin = ggplot2::margin(r = small_size / 2, l = small_size / 4)),
-      axis.ticks = ggplot2::element_line(colour = color, size = line_size),
-      axis.line = ggplot2::element_line(colour = "black",
-                                                size = line_size,
-                                                lineend = "square"),
-      axis.line.x = ggplot2::element_blank(),
-      axis.line.y = ggplot2::element_blank(),
-      legend.background = ggplot2::element_blank(),
-      legend.key = ggplot2::element_blank(),
-      legend.key.size = grid::unit(1.1 * font_size, "pt"),
-      legend.spacing = grid::unit(font_size, "pt"),
-      legend.box.spacing = grid::unit(font_size, "pt"),
-      legend.margin = ggplot2::margin(0, 0, 0, 0),
-      legend.text = ggplot2::element_text(size = ggplot2::rel(small_rel)),
-      legend.justification = c("left", "center"),
-      panel.background = ggplot2::element_blank(),
-      panel.border = ggplot2::element_blank(),
-      panel.grid.major  = ggplot2::element_line(colour = color,
-                                                size = line_size),
-      panel.grid.minor = ggplot2::element_blank(),
-      panel.spacing = grid::unit(half_line, "pt"),
-      strip.text = ggplot2::element_text(
-        size = ggplot2::rel(small_rel),
-        margin = ggplot2::margin(half_line, half_line, half_line, half_line)
-      ),
-      strip.background = ggplot2::element_rect(fill = "grey80", colour = "grey50"),
-      plot.background = ggplot2::element_blank(),
-      plot.title = ggplot2::element_text(
-        face = "bold",
-        size = font_size + 2,
+        debug = FALSE,
+        margin = ggplot2::margin(.5, .5, .5, .5),
         hjust = 0,
-        vjust = 1,
-        margin = ggplot2::margin(b = half_line)
+        vjust = .5,
+        lineheight = .9
       ),
-      plot.subtitle = ggplot2::element_text(
-        size = ggplot2::rel(small_rel),
-        hjust = 0,
-        vjust = 1,
-        margin = ggplot2::margin(b = half_line * small_rel)
-      ),
-      plot.caption = ggplot2::element_text(
-        size = ggplot2::rel(small_rel),
-        hjust = 1,
-        vjust = 1,
-        margin = ggplot2::margin(t = half_line * small_rel)
-      ),
-      plot.margin = ggplot2::margin(half_line, half_line, half_line, half_line),
-      complete = TRUE
+    axis.text = ggplot2::element_text(size = ggplot2::rel(.9)),
+    plot.title = ggplot2::element_text(size = ggplot2::rel(1.4), colour = "#474747", face = "bold"),
+    plot.subtitle = ggplot2::element_text(size = ggplot2::rel(1.2)),
+    panel.grid = ggplot2::element_line(colour = color),
+    panel.spacing = unit(font_size, "pt"),
+    strip.text = ggplot2::element_text(hjust = 0),
+    axis.title.x = ggplot2::element_text(hjust = 0),
+    axis.title.y = ggplot2::element_text(angle = 90, hjust = 1),
+    axis.text.x = ggplot2::element_text(hjust = .5),
+    axis.text.y = ggplot2::element_text(hjust = .5),
+    legend.position = "bottom",
+    complete = TRUE
     )
 }
 
@@ -124,6 +89,8 @@ theme_valco <- function(font_size = 14, font_family = "", line_size = .5, color 
   theme_malco(font_size = font_size, font_family = font_family, line_size, color) %+replace%
     ggplot2::theme(
       panel.grid.major.y = ggplot2::element_blank(),
+      panel.grid.minor.y = ggplot2::element_blank(),
+      panel.grid.minor.x = ggplot2::element_blank(),
       axis.line.y = ggplot2::element_line(colour = color, size = line_size),
       complete = TRUE
     )
@@ -136,6 +103,8 @@ theme_halco <- function(font_size = 14, font_family = "", line_size = .5, color 
   theme_malco(font_size = font_size, font_family = font_family, line_size, color) %+replace%
     ggplot2::theme(
       panel.grid.major.x = ggplot2::element_blank(),
+      panel.grid.minor.x = ggplot2::element_blank(),
+      panel.grid.minor.y = ggplot2::element_blank(),
       axis.line.x = ggplot2::element_line(colour = color, size = line_size),
       complete = TRUE
     )
@@ -147,14 +116,87 @@ theme_halco <- function(font_size = 14, font_family = "", line_size = .5, color 
 theme_alco <- function(font_size = 14, font_family = "", line_size = .5, color = "grey90") {
   theme_malco(font_size = font_size, font_family = font_family, line_size, color) %+replace%
     ggplot2::theme(
-      axis.title = ggplot2::element_blank(),
-      axis.text = ggplot2::element_blank(),
       axis.ticks = ggplot2::element_blank(),
       panel.grid = ggplot2::element_blank(),
       legend.position = "bottom",
       legend.justification = "center",
       complete = TRUE
     )
+}
+
+#' @rdname theme_malco
+#' @export
+#' @importFrom ggplot2 %+replace%
+theme_barr <- function(font_size = 14, font_family = "", line_size = .5, color = "grey90") {
+  theme_malco(font_size = font_size, font_family = font_family, line_size, color) %+replace%
+    ggplot2::theme(
+      axis.ticks = ggplot2::element_blank(),
+      axis.text = ggplot2::element_blank(),
+      panel.grid = ggplot2::element_blank(),
+      complete = TRUE
+    )
+}
+
+#' @rdname theme_malco
+#' @export
+#' @importFrom ggplot2 %+replace%
+theme_allgood <- function(font_size = 14, font_family = "", line_size = .5, color = "grey92", text_color = "grey65") {
+  theme_malco(font_size = font_size, font_family = font_family, line_size, color = color, text_color = text_color) %+replace%
+    ggplot2::theme(
+      plot.background = ggplot2::element_rect(fill = color),
+      plot.title = ggplot2::element_text(size = ggplot2::rel(1.4), colour = "#0172B1", face = "bold"),
+      complete = TRUE
+    )
+}
+
+#' mbmisc ggplot scales
+#'
+#' @param aesthetics What type of aesthetic?
+#' @param order What's the order of the palette?
+#' @param alpha A numeric vector
+#' @param ... Passed to [ggplot2::discrete_scale]
+#'
+#' @return a ggplot scale
+#' @export
+#'
+#' @examples
+#'
+#' library(ggplot2)
+#'
+#' ggplot(mtcars, aes(mpg, hp, col = am)) +
+#'   geom_point() +
+#'   scale_color_malco()
+#'
+scale_malco <- function(aesthetics, order = 1:7, alpha = NULL, ...) {
+  values <- palette_malco(order)
+  n <- length(values)
+
+  if (!is.null(alpha)) values <- scales::alpha(values, alpha)
+  pal <- function(n) {
+      if (n > length(values)) {
+          warning("Insufficient values in manual scale. ",
+              n, " needed but only ", length(values), " provided.",
+              call. = FALSE)
+      }
+      values
+  }
+  ggplot2::discrete_scale(aesthetics, "manual", pal, ...)
+}
+
+#' @export
+#' @name scale_malco
+scale_colour_malco <- function(order = 1:7, alpha = NULL, ...) {
+  scale_malco(aesthetics = "colour", order = order, alpha = alpha, ...)
+}
+
+#' @export
+#' @name scale_malco
+scale_color_malco <- scale_colour_malco
+
+#' @export
+#' @name scale_malco
+scale_fill_malco <- function(order = 1:7, alpha = NULL, ...) {
+  scale_malco(aesthetics = "fill", order = order, alpha = alpha, ...)
 }
 
 #' Color text in R Markdown

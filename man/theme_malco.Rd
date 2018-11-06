@@ -5,10 +5,12 @@
 \alias{theme_valco}
 \alias{theme_halco}
 \alias{theme_alco}
+\alias{theme_barr}
+\alias{theme_allgood}
 \title{Minimalistic themes}
 \usage{
-theme_malco(font_size = 14, font_family = "Roboto Condensed",
-  line_size = 0.5, color = "grey90")
+theme_malco(font_size = 14, font_family = "IBM Plex Sans",
+  line_size = 0.5, color = "grey90", text_color = "grey70")
 
 theme_valco(font_size = 14, font_family = "", line_size = 0.5,
   color = "grey90")
@@ -18,6 +20,12 @@ theme_halco(font_size = 14, font_family = "", line_size = 0.5,
 
 theme_alco(font_size = 14, font_family = "", line_size = 0.5,
   color = "grey90")
+
+theme_barr(font_size = 14, font_family = "", line_size = 0.5,
+  color = "grey90")
+
+theme_allgood(font_size = 14, font_family = "", line_size = 0.5,
+  color = "grey92", text_color = "grey65")
 }
 \arguments{
 \item{font_size}{font size.}
