@@ -13,6 +13,6 @@
 #' @examples
 #'
 #' 1 %not_in% 2:10 # TRUE
-`%not_in%` <- function(lhs, rhs) {
-  !(lhs %in% rhs)
+`%not_in%` <- function(lhs, rhs){
+  match(lhs, rhs, nomatch = 0) == 0
 }
