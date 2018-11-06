@@ -37,3 +37,29 @@ GeomPoint2 <- ggplot2::ggproto(
     stroke = 0.75
   )
 )
+
+#' Wrap ggplot labels
+#'
+#' `labs_wrap()` wraps [stringr::str_wrap()] around any argument passed to
+#' [ggplot2::labs()], thus wrapping it.
+#'
+#' @param ... Arguments passed to [ggplot2::labs()]
+#' @param width The width of the characters to wrap to.
+#'
+#' @export
+#' @examples
+#' library(ggplot2)
+#' ggplot(mtcars, aes(mpg, hp)) +
+#' labs_wrap(title =
+#'   "Here is my really long title. You see, I have a lot to say, you see.",
+#'   width = 30)
+labs_wrap <- function(..., width = 80) {
+  x <- tibble::enframe(c(...))
+  x <- x %>%
+    dplyr::mutate(value = stringr::str_wrap(value, width = width)) %>%
+    tibble::deframe() %>%
+    as.list()
+
+  ggplot2::labs(x)
+}
+

@@ -1,3 +1,4 @@
 globalVariables(c(
-  "."
+  ".",
+  "value"
 ))

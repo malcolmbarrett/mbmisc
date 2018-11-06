@@ -7,6 +7,8 @@
 \alias{theme_alco}
 \alias{theme_barr}
 \alias{theme_allgood}
+\alias{theme_saulgood}
+\alias{theme_graphy}
 \title{Minimalistic themes}
 \usage{
 theme_malco(font_size = 14, font_family = "IBM Plex Sans",
@@ -26,19 +28,30 @@ theme_barr(font_size = 14, font_family = "", line_size = 0.5,
 
 theme_allgood(font_size = 14, font_family = "", line_size = 0.5,
   color = "grey92", text_color = "grey65")
+
+theme_saulgood(font_size = 14, font_family = "", line_size = 0.5,
+  color = "grey92", text_color = "grey65")
+
+theme_graphy(font_size = 14, font_family = "", line_size = 0.5,
+  color = "grey92", text_color = "grey65")
 }
 \arguments{
-\item{font_size}{font size.}
+\item{font_size}{font size}
 
 \item{font_family}{font family}
 
 \item{line_size}{grid line size}
 
 \item{color}{grid lines color}
+
+\item{text_color}{font color}
 }
 \description{
-Four minimalistic themes based on \code{\link[cowplot:theme_minimal_grid]{cowplot::theme_minimal_grid()}}.
-\code{theme_malco()} provides a minimal grid theme. \code{theme_halco()} draws only
-horizontal lines and \code{theme_valco()} only vertical lines. \code{theme_alco()}
-removes all axis and grid ink.
+Four minimalistic themes based on \code{\link[ggplot2:theme_minimal]{ggplot2::theme_minimal()}}. \code{theme_malco()}
+provides a minimal grid theme. \code{theme_halco()} draws only horizontal lines
+and \code{theme_valco()} only vertical lines. \code{theme_alco()} removes all axis and
+grid ink. \code{theme_allgood()} is \code{theme_malco()} on a light gray background with
+blue title text. These themes use the font IBM Plex Sans. You may want to use
+\code{hrbrthemes::import_plex_sans()} and \code{extrafont::loadfonts()} to get it to
+play nicely with PDFs
 }

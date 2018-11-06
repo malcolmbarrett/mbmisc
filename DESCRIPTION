@@ -16,6 +16,8 @@ Imports:
     dplyr,
     magrittr,
     broom,
-    glue
+    glue,
+    tibble,
+    scales
 Suggests: 
     knitr
