@@ -16,6 +16,6 @@ a list with locations, names, and labels.
 }
 \description{
 \code{dictionary()} searches variables that have a \code{label} attribute, like those
-created with \link[Hmisc:label]{Hmisc::label} or some functions in \link{haven}, for patterns.
+created with \link[Hmisc:label]{Hmisc::label} or some functions in haven, for patterns.
 Useful for searching large, labelled datasets.
 }

@@ -3,6 +3,8 @@
 #' @param data a `data.frame`
 #' @param ... variables to center. Can use `tidyselect` as in [dplyr::select()].
 #'   If none are included, default is to center all numeric variables.
+#' @param na.rm a logical value indicating whether NA values should be stripped
+#'   before the computation proceeds.
 #'
 #' @return a `data.frame`
 #' @export
@@ -20,7 +22,7 @@
 #' @importFrom rlang !!!
 center <- function(data, ..., na.rm = TRUE) {
   cen_vars <- rlang::enquos(...)
-  browser()
+
   if (rlang::is_empty(cen_vars)) {
     data <- data %>%
       dplyr::mutate_if(is.numeric, dplyr::funs(. - mean(., na.rm = na.rm)))

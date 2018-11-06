@@ -1,7 +1,7 @@
 #' Search variable labels using regular expressions
 #'
 #' `dictionary()` searches variables that have a `label` attribute, like those
-#' created with [Hmisc::label] or some functions in [haven], for patterns.
+#' created with [Hmisc::label] or some functions in haven, for patterns.
 #' Useful for searching large, labelled datasets.
 #'
 #' @param data a `data.frame`

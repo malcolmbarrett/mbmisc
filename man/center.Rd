@@ -11,6 +11,9 @@ center(data, ..., na.rm = TRUE)
 
 \item{...}{variables to center. Can use \code{tidyselect} as in \code{\link[dplyr:select]{dplyr::select()}}.
 If none are included, default is to center all numeric variables.}
+
+\item{na.rm}{a logical value indicating whether NA values should be stripped
+before the computation proceeds.}
 }
 \value{
 a \code{data.frame}

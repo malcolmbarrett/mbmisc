@@ -31,6 +31,7 @@ round_with_zeros <- function(.x, digits = 2) {
 #' @export
 #'
 #' @examples
+#' clean_pval(1e-10)
 clean_pval <- function(x, less_than = .001, digits = 3, add_stars = FALSE,
                        stars = list(pval = c(.1, .05, .01, .001),
                                     symbol = c(".", "*", "**", "***"))) {
@@ -51,8 +52,9 @@ clean_pval <- function(x, less_than = .001, digits = 3, add_stars = FALSE,
 #' @examples
 #'
 #' make_formula("y", paste0("x", 1:10))
+#' @importFrom stats as.formula
 make_formula <- function(y, x) {
-  as.formula(paste(y, "~", paste(x, collapse = " + ")), env = parent.env())
+  as.formula(paste(y, "~", paste(x, collapse = " + ")), env = parent.frame())
 }
 
 #' Paste an estimate and CI together
@@ -67,8 +69,9 @@ make_formula <- function(y, x) {
 #' @param bound bounding symbols around the CI. Default is parentheses.
 #' @param divider a divider between the upper and lower CI. Default is a comma.
 #' @param descriptor a descriptor of the CI. Default is "95\\% CI".
+#' @param include_name logical. Should the name of the term be included?
 #' @param digits the number of digits to round to
-#' @param lvl the CI level
+#' @param lvl the confidence interval probability
 #'
 #' @return a `data.frame` or vector.
 #' @export

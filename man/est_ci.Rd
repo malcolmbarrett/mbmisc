@@ -41,6 +41,8 @@ comma()
 
 \item{var}{estimate name}
 
+\item{include_name}{logical. Should the name of the term be included?}
+
 \item{bound}{bounding symbols around the CI. Default is parentheses.}
 
 \item{divider}{a divider between the upper and lower CI. Default is a comma.}
@@ -49,7 +51,7 @@ comma()
 
 \item{digits}{the number of digits to round to}
 
-\item{lvl}{the CI level}
+\item{lvl}{the confidence interval probability}
 }
 \value{
 a \code{data.frame} or vector.

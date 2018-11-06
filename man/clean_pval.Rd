@@ -26,3 +26,6 @@ a character vector
 This function cleans a p-value by rounding to a certain digit and changing
 any values less than a certain amount to, e.g., "<.001".
 }
+\examples{
+clean_pval(1e-10)
+}

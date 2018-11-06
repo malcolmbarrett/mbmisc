@@ -35,6 +35,8 @@ light_grey(x, code = FALSE)
 \item{x}{a string, the text to be colored}
 
 \item{col}{the color}
+
+\item{code}{logical. Is this code?}
 }
 \value{
 a character vector

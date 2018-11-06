@@ -8,7 +8,7 @@
 #' @return a character vector
 #' @export
 #' @rdname palettes
-palette_present <- function(index = NULL) {
+palette_malco <- function(index = NULL) {
   pal <- c("#E69F00", "#56B4E9", "#009E73", "#D55E00", "#E5E5E5", "#23373B")
   if (!is.null(index)) pal[index] else pal
 }
@@ -163,6 +163,7 @@ theme_alco <- function(font_size = 14, font_family = "", line_size = .5, color =
 #'
 #' @param x a string, the text to be colored
 #' @param col the color
+#' @param code logical. Is this code?
 #'
 #' @return a character vector
 #' @export

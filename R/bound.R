@@ -32,6 +32,7 @@ bound <- function(x, min = NULL, max = NULL) {
 
 #' @rdname limiters
 #' @export
+#' @importFrom stats quantile
 sever <- function(x, pctl = 99) {
   if (pctl > 1) pctl <- pctl / 100
   lower <- quantile(x, 1 - pctl)
