@@ -2,7 +2,9 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Travis build
-status](https://travis-ci.org/malcolmbarrett/mbmisc.svg?branch=master)](https://travis-ci.org/malcolmbarrett/mbmisc)
+status](https://travis-ci.org/malcolmbarrett/mbmisc.svg?branch=master)](https://travis-ci.org/malcolmbarrett/mbmisc)[![AppVeyor
+build
+status](https://ci.appveyor.com/api/projects/status/github/malcolmbarrett/mbmisc?branch=master&svg=true)](https://ci.appveyor.com/project/malcolmbarrett/mbmisc)
 
 # mbmisc
 
