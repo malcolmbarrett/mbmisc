@@ -2,7 +2,7 @@
 % Please edit documentation in R/geoms.R
 \name{geom_point2}
 \alias{geom_point2}
-\title{Title}
+\title{Bigger Points}
 \usage{
 geom_point2(mapping = NULL, data = NULL, stat = "identity",
   position = "identity", ..., na.rm = FALSE, show.legend = NA,
@@ -54,5 +54,8 @@ that define both data and aesthetics and shouldn't inherit behaviour from
 the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 }
 \description{
-Title
+\code{geom_points2()} is identical to \link[ggplot2:geom_point]{ggplot2::geom_point} except that it changes
+some of the default aesthetics: points are bigger, use shape 21 (which has
+fill and color aestherics) using a blue fill and white border color.
+Additionally, the strokes around the point are slightly bigger.
 }
