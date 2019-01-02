@@ -28,6 +28,12 @@ font_col <- function(x, col, code = FALSE) {
 
 #' @export
 #' @name color
+col_code <- function(x, col) {
+  font_col(x, col = col, code = TRUE)
+}
+
+#' @export
+#' @name color
 blue <- function(x, code = FALSE) {
   font_col(x, "#56B4E9", code = code)
 }
@@ -69,3 +75,9 @@ light_gray <- function(x, code = FALSE) {
 #' @export
 #' @name color
 light_grey <- light_gray
+
+#' @export
+#' @name color
+white <- function(x, code = FALSE) {
+  font_col(x, "#EDEEEF", code = code)
+}

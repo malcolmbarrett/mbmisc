@@ -51,7 +51,7 @@ theme_malco <- function(font_size = 14, font_family = "IBM Plex Sans",
     axis.title.x = ggplot2::element_text(hjust = 0),
     axis.title.y = ggplot2::element_text(angle = 90, hjust = 1),
     axis.text.x = ggplot2::element_text(hjust = .5),
-    axis.text.y = ggplot2::element_text(hjust = .5),
+    axis.text.y = ggplot2::element_text(hjust = 0),
     legend.position = "bottom",
     complete = TRUE
     )

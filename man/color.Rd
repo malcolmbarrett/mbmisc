@@ -3,6 +3,7 @@
 \name{color}
 \alias{color}
 \alias{font_col}
+\alias{col_code}
 \alias{blue}
 \alias{dark_blue}
 \alias{orange}
@@ -11,9 +12,12 @@
 \alias{dark_grey}
 \alias{light_gray}
 \alias{light_grey}
+\alias{white}
 \title{Color text in R Markdown}
 \usage{
 font_col(x, col, code = FALSE)
+
+col_code(x, col)
 
 blue(x, code = FALSE)
 
@@ -30,6 +34,8 @@ dark_grey(x, code = FALSE)
 light_gray(x, code = FALSE)
 
 light_grey(x, code = FALSE)
+
+white(x, code = FALSE)
 }
 \arguments{
 \item{x}{a string, the text to be colored}

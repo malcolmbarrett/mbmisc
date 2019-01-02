@@ -3,11 +3,14 @@
 \name{palette_malco}
 \alias{palette_malco}
 \alias{palette_highlight}
+\alias{palette_palitra}
 \title{Custom color palettes}
 \usage{
 palette_malco(index = NULL)
 
 palette_highlight(index = NULL)
+
+palette_palitra(index = NULL)
 }
 \arguments{
 \item{index}{a numeric vector, the colors to include}
